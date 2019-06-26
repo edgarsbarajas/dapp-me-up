@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Dapp Me Up, dawg</title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <h1>Dapp me up, dawg</h1>
+
+  <div class="accordian">
+    <div class="set">
+      <h2>Transfer</h2>
+      <form id="transfer">
+        <div class="input-container">
+          <label>To</label>
+          <input type="text" name="to" value="0x3e59f32140585f215c4c8123706A65db2fF1FF8D" placeholder="0x3e59f32140585f215c4c8123706A65db2fF1FF8D"/>
+        </div>
+        <div class="input-container">
+          <label>Amount</label>
+          <input type="text" name="amount" value="10000000000000000" placeholder="10000000000000000"/>
+        </div>
+        <div style="width: 100%;">
+          <button>DO IT</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="set">
+      <h2>Approve</h2>
+      <form id="approve">
+        <div class="input-container">
+          <label>Spender</label>
+          <input type="text" name="spender" value="0x3e59f32140585f215c4c8123706A65db2fF1FF8D" placeholder="0x3e59f32140585f215c4c8123706A65db2fF1FF8D"/>
+        </div>
+        <div class="input-container">
+          <label>Amount</label>
+          <input type="text" name="amount" />
+        </div>
+        <div style="width: 100%;">
+          <button>DO IT</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="set">
+      <h2>Decrease Approval</h2>
+      <form id="decrease-approval">
+        <div class="input-container">
+          <label>Spender</label>
+          <input type="text" name="spender" value="0x3e59f32140585f215c4c8123706A65db2fF1FF8D" placeholder="0x3e59f32140585f215c4c8123706A65db2fF1FF8D"/>
+        </div>
+        <div class="input-container">
+          <label>Amount</label>
+          <input type="text" name="amount" />
+        </div>
+        <div style="width: 100%;">
+          <button>DO IT</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="set">
+      <h2>Deposit</h2>
+      <form id="deposit">
+        <div style="width: 100%;">
+          <button>DO IT</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="set">
+      <h2>Increase Approval</h2>
+      <form id="increase-approval">
+        <div class="input-container">
+          <label>Spender</label>
+          <input type="text" name="spender" value="0x3e59f32140585f215c4c8123706A65db2fF1FF8D" placeholder="0x3e59f32140585f215c4c8123706A65db2fF1FF8D"/>
+        </div>
+        <div class="input-container">
+          <label>Amount</label>
+          <input type="text" name="amount" />
+        </div>
+        <div style="width: 100%;">
+          <button>DO IT</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="set">
+      <h2>Transfer From</h2>
+      <form id="transfer-from">
+        <div class="input-container">
+          <label>Source</label>
+          <input type="text" name="source" value="0x3e59f32140585f215c4c8123706A65db2fF1FF8D" placeholder="0x3e59f32140585f215c4c8123706A65db2fF1FF8D"/>
+        </div>
+        <div class="input-container">
+          <label>To</label>
+          <input type="text" name="to" value="0x3e59f32140585f215c4c8123706A65db2fF1FF8D" placeholder="0x3e59f32140585f215c4c8123706A65db2fF1FF8D"/>
+        </div>
+        <div class="input-container">
+          <label>Amount</label>
+          <input type="text" name="amount" />
+        </div>
+        <div style="width: 100%;">
+          <button>DO IT</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="set">
+      <h2>Withdraw</h2>
+      <form id="withdraw">
+        <div class="input-container">
+          <label>Amount</label>
+          <input type="text" name="amount" />
+        </div>
+        <div style="width: 100%;">
+          <button>DO IT</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="set">
+      <h2>Allowance</h2>
+      <form id="allowance">
+        <div class="input-container">
+          <label>Owner</label>
+          <input type="text" name="owner" />
+        </div>
+        <div class="input-container">
+          <label>Spender</label>
+          <input type="text" name="spender" value="0x3e59f32140585f215c4c8123706A65db2fF1FF8D" placeholder="0x3e59f32140585f215c4c8123706A65db2fF1FF8D"/>
+        </div>
+        <div style="width: 100%;">
+          <button>DO IT</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="set">
+      <h2>Balance Of</h2>
+      <form id="balance-of">
+        <div class="input-container">
+          <label>Owner</label>
+          <input type="text" name="owner" />
+        </div>
+        <div style="width: 100%;">
+          <button>DO IT</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="js/web3.min.js"></script>
+  <script>
+    if(typeof web3 !== 'undefined') {
+      web3 = new Web3(web3.currentProvider);
+    } else {
+      web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+    }
+
+    console.log(web3);
+
+    // Set account
+    web3.eth.defaultAccount = web3.eth.accounts[0];
+
+    // set the contract ABI
+    const contractAbi = [{"name":"Approval","inputs":[{"type":"address","name":"owner","indexed":true},{"type":"address","name":"spender","indexed":true},{"type":"uint256","name":"amount","indexed":false,"unit":"wei"}],"anonymous":false,"type":"event"},{"name":"Deposited","inputs":[{"type":"address","name":"source","indexed":true},{"type":"uint256","name":"amount","indexed":false,"unit":"wei"}],"anonymous":false,"type":"event"},{"name":"Transfer","inputs":[{"type":"address","name":"source","indexed":true},{"type":"address","name":"to","indexed":true},{"type":"uint256","name":"amount","indexed":false,"unit":"wei"}],"anonymous":false,"type":"event"},{"name":"Withdrawn","inputs":[{"type":"address","name":"to","indexed":true},{"type":"uint256","name":"amount","indexed":false,"unit":"wei"}],"anonymous":false,"type":"event"},{"outputs":[],"inputs":[{"type":"address","name":"initial_account"},{"type":"uint256","name":"initial_balance","unit":"wei"}],"constant":false,"payable":false,"type":"constructor"},{"name":"allowance","outputs":[{"type":"uint256","name":"out","unit":"wei"}],"inputs":[{"type":"address","name":"owner"},{"type":"address","name":"spender"}],"constant":true,"payable":false,"type":"function","gas":815},{"name":"approve","outputs":[{"type":"bool","name":"out"}],"inputs":[{"type":"address","name":"spender"},{"type":"uint256","name":"amount","unit":"wei"}],"constant":false,"payable":false,"type":"function","gas":37719},{"name":"balanceOf","outputs":[{"type":"uint256","name":"out","unit":"wei"}],"inputs":[{"type":"address","name":"owner"}],"constant":true,"payable":false,"type":"function","gas":715},{"name":"decreaseApproval","outputs":[],"inputs":[{"type":"address","name":"spender"},{"type":"uint256","name":"amount","unit":"wei"}],"constant":false,"payable":false,"type":"function","gas":38742},{"name":"deposit","outputs":[],"inputs":[],"constant":false,"payable":true,"type":"function","gas":73656},{"name":"increaseApproval","outputs":[],"inputs":[{"type":"address","name":"spender"},{"type":"uint256","name":"amount","unit":"wei"}],"constant":false,"payable":false,"type":"function","gas":39008},{"name":"totalSupply","outputs":[{"type":"uint256","name":"out","unit":"wei"}],"inputs":[],"constant":true,"payable":false,"type":"function","gas":663},{"name":"transfer","outputs":[{"type":"bool","name":"out"}],"inputs":[{"type":"address","name":"to"},{"type":"uint256","name":"amount","unit":"wei"}],"constant":false,"payable":false,"type":"function","gas":74324},{"name":"transferFrom","outputs":[{"type":"bool","name":"out"}],"inputs":[{"type":"address","name":"source"},{"type":"address","name":"to"},{"type":"uint256","name":"amount","unit":"wei"}],"constant":false,"payable":false,"type":"function","gas":110297},{"name":"withdraw","outputs":[],"inputs":[{"type":"uint256","name":"amount","unit":"wei"}],"constant":false,"payable":false,"type":"function","gas":108330},{"name":"decimals","outputs":[{"type":"uint256","name":"out"}],"inputs":[],"constant":true,"payable":false,"type":"function","gas":783},{"name":"symbol","outputs":[{"type":"string","name":"out"}],"inputs":[],"constant":true,"payable":false,"type":"function","gas":2291}];
+
+    // Set the contract address
+    const contractAddress = "0xb83ca600f0Ab83110A2F6f7aDd2EFf497E9fd6Cc";
+
+    // Set the contract
+    const contract = web3.eth.contract(contractAbi).at(contractAddress);
+
+    console.log({ contract })
+
+    // Event Listeners:
+    // Transfer
+    $("#transfer").on("submit", function(event) {
+      event.preventDefault();
+
+      const to = $(this).find("input[name='to']");
+      const amount = $(this).find("input[name='amount']");
+
+      contract.transfer(to.val(), amount.val());
+    });
+
+    // Approve
+    $("#approve").on("submit", function(event) {
+      event.preventDefault();
+
+      const spender = $(this).find("input[name='spender']");
+      const amount = $(this).find("input[name='amount']");
+
+      contract.approve(spender.val(), amount.val());
+    });
+
+    // Decrease Approval
+    $("#decrease-approval").on("submit", function(event) {
+      event.preventDefault();
+
+      const spender = $(this).find("input[name='spender']");
+      const amount = $(this).find("input[name='amount']");
+
+      contract.decreaseApproval(spender.val(), amount.val());
+    });
+
+    // Deposit
+    $("#deposit").on("submit", function(event) {
+      event.preventDefault();
+
+      contract.deposit();
+    });
+
+    // Increase Approvl
+    $("#increase-approval").on("submit", function(event) {
+      event.preventDefault();
+
+      const spender = $(this).find("input[name='spender']");
+      const amount = $(this).find("input[name='amount']");
+
+      contract.increaseApproval(spender.val(), amount.val());
+    });
+
+    // Transfer from
+    $("#transfer-from").on("submit", function(event) {
+      event.preventDefault();
+
+      const source = $(this).find("input[name='source']");
+      const to = $(this).find("input[name='to']");
+      const amount = $(this).find("input[name='amount']");
+
+      contract.increaseApproval(source.val(), to.val(), amount.val());
+    });
+
+    // Withdraw
+    $("#withdraw").on("submit", function(event) {
+      event.preventDefault();
+
+      const amount = $(this).find("input[name='amount']");
+
+      contract.increaseApproval(amount.val());
+    });
+
+    // Allowance
+    $("#allowance").on("submit", function(event) {
+      event.preventDefault();
+
+      const owner = $(this).find("input[name='owner']");
+      const spender = $(this).find("input[name='spender']");
+
+      contract.increaseApproval(owner.val(), spender.val());
+    });
+
+    // Balance of
+    $("#balance-of").on("submit", function(event) {
+      event.preventDefault();
+
+      const owner = $(this).find("input[name='owner']");
+
+      contract.increaseApproval(owner.val());
+    });
+
+    $(".accordian h2").on("click", function() {
+      $(this).siblings("form").toggleClass("active");
+    });
+  </script>
+</body>
+
+</html>
